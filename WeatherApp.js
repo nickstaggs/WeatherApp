@@ -4,7 +4,7 @@ $(document).ready( function(){
   // Gets location from ip and uses callBack function passed into it to
   // for necessary operations on response
   function getLocation(callBack) {
-      $.get("http://ipinfo.io",
+      $.get("https://ipinfo.io",
               function (response) {
                 callBack(response);
               },
@@ -100,7 +100,7 @@ $(document).ready( function(){
     $("#location").html(response.city+ ", " + response.region);
 
     var latlon = response.loc.split(",");
-    var newUrl = "http://api.openweathermap.org/data/2.5/weather?lat=" + latlon[0] + "&lon=" + latlon[1] +"&" + "APPID=31e79a30495217e5cbfe7444794d91f8";
+    var newUrl = "https://api.openweathermap.org/data/2.5/weather?lat=" + latlon[0] + "&lon=" + latlon[1] +"&" + "APPID=31e79a30495217e5cbfe7444794d91f8";
 
     getWeather(setWeather, newUrl, true);
   }
@@ -109,7 +109,7 @@ $(document).ready( function(){
   function metricWeather(response) {
 
     var latlon = response.loc.split(",");
-    var newUrl = "http://api.openweathermap.org/data/2.5/weather?lat=" + latlon[0] + "&lon=" + latlon[1] +"&" + "APPID=31e79a30495217e5cbfe7444794d91f8";
+    var newUrl = "https://api.openweathermap.org/data/2.5/weather?lat=" + latlon[0] + "&lon=" + latlon[1] +"&" + "APPID=31e79a30495217e5cbfe7444794d91f8";
 
     getWeather(setWeather, newUrl, false);
   }
